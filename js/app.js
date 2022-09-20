@@ -29,6 +29,16 @@ precio.addEventListener('blur', () => {
         alerta.classList.add('d-none')
     }
 })
+precio.addEventListener('input', () => {
+    if (precio.value < 0) {
+        alert('No puedes ingresar un número negativo')
+        precio.value = ''
+    }
+    if (precio.value > 51000) {
+        alert('No podemos ofrecer un seguro para el valor de su auto')
+        precio.value = ''
+    }
+})
 formulario.addEventListener('submit', enviarCotizacion)
 
 function enviarCotizacion(e){
